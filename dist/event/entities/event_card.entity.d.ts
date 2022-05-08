@@ -1,0 +1,31 @@
+import { SoftDelete } from 'src/common/core/soft-delete';
+import { EventCardDto } from '../dtos/evet_card.dto';
+import { User } from 'src/user/entities/user.entity';
+import { Ticket } from './ticket.entity';
+export declare class EventCard extends SoftDelete {
+    name: string;
+    location: string;
+    date: string;
+    likes_number: number;
+    background: string;
+    picture_large: string;
+    picture_small: string;
+    price: number;
+    venue_description: string;
+    description: string;
+    facebook: string;
+    twitter: string;
+    instagram: string;
+    tiktok: string;
+    telegram: string;
+    discord: string;
+    creator: User;
+    tags: string;
+    category: string;
+    collection: string;
+    green_pass_needed: boolean;
+    total_tickets: number;
+    tickets: Ticket[];
+    buy_count: number;
+    toEventCardDto(): EventCardDto;
+}

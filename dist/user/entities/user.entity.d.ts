@@ -1,0 +1,32 @@
+import { SoftDelete } from 'src/common/core/soft-delete';
+import { UserDto } from '../dtos/user.dto';
+import { UserRole } from '../enums/user-role.enum';
+import { UserType } from '../enums/user-type.enum';
+import { EventCard } from 'src/event/entities/event_card.entity';
+import { Message } from 'src/message/entities/message.entity';
+import { Ticket } from 'src/event/entities/ticket.entity';
+export declare class User extends SoftDelete {
+    name: string;
+    email: string;
+    user_type: UserType;
+    login_user: string;
+    password: string;
+    preProcess(): any;
+    phone: string;
+    role: UserRole;
+    email_verified: boolean;
+    verification_code: string;
+    forgetpassword_code: string;
+    followers: number;
+    medium: string;
+    instagram: string;
+    twitter: string;
+    facebook: string;
+    avatar: string;
+    background: string;
+    wallet_address: string;
+    event_cards: EventCard[];
+    tickets: Ticket[];
+    messages: Message[];
+    toUserDto(): UserDto;
+}
